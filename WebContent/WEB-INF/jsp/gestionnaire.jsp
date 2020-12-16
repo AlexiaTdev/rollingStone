@@ -7,6 +7,20 @@
 <title>Gestionnaire</title>
 </head>
 <body>
-	Bienvenue sur la page du gestionnaire !
+
+	<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" href="#">Retourner à l'Accueil</a>
+  </li>
+</ul>
+	<h1>Bienvenue sur la page du gestionnaire !</h1>
+	<ul class="list-group">
+  		<li class="list-group-item">First item</li>
+  		<li class="list-group-item">Second item</li>
+  		<li class="list-group-item">Third item</li>
+	</ul>
+	<button id="louer">Louer voiture</button>
+	<button id="restituer">restituer voiture</button>
+	<button id="checkup">demander checkUp</button>
 </body>
 </html>
