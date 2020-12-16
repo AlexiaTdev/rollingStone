@@ -5,17 +5,23 @@
 <head>
 <meta charset="UTF-8">
 <title>RollingStone - Service de location de voiture</title>
-<link type="text/css" rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>"/>
+
 </head>
 <body>
 
-<form action="/action_page.php" id="loginform">
-  <label for="userNameForm">Username:</label>
-  <input type="text" id="userNameForm" name="userNameForm">
-   <label for="passwordNameForm">Password:</label>
-  <input type="text" id="passwordNameForm" name="passwordNameForm">
+<div class="welcome">
+<img src="/ressources/stoneAgeWheel.svg" alt="stone age wheel" width="500" height="600">
+<h1>Bienvenue sur Rolling Stone !</h1>
+</div>
+<div class="container">
+<form method="post" action="j_security_check">
+  <label for="j_username">Username:</label>
+  <input type="text" class="form-control" id="userNameForm" name="j_username">
+  <label for="j_password">Password:</label>
+  <input type="password" class="form-control" id="passwordNameForm" name="j_password">
   <input type="submit">
 </form>
+</div>
 
 <script src="<c:url value="/js/jquery-3.5.1.min.js"/>"></script>
 <script src="<c:url value="/js/bootstrap.bundle.min.js"/>"></script>
