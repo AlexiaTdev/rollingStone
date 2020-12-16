@@ -1,4 +1,4 @@
-package fr.epsi.rollingstone;
+package fr.epsi.rollingstone.beans;
 
 public class Client {
 	private int id;
