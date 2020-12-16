@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,4 +25,17 @@
 <script src="<c:url value="/js/jquery-3.5.1.min.js"/>"></script>
 <script src="<c:url value="/js/bootstrap.bundle.min.js"/>"></script>
 </body>
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Accueil</title>
+</head>
+<body>
+	Bienvenue sur la page d'accueil !
+</body>
+>>>>>>> f799f294952274c6ece884666969a187f6e4fa48
 </html>
