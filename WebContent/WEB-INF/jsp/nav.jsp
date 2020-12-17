@@ -24,7 +24,7 @@
       </c:if>
       <c:if test="${isConnected}" var="stockResult" scope="request">
       	<li class="nav-item">
-        	<a class="nav-link" href="#">Sedeconnecter</a>
+        	<a class="nav-link" href="#">Se deconnecter</a>
       	</li>
       </c:if>
     </ul>

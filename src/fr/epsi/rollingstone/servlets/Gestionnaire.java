@@ -12,7 +12,25 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Gestionnaire")
 public class Gestionnaire extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/gestionnaire.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String submit = request.getParameter("submit");
+
+		if (submit == "louer") {
+
+			this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/gestionnaire.jsp").forward(request, response);
+		}
+		if (submit == "restituer") {
+
+		}
+		if (submit == "checkup") {
+
+		}
+
 	}
 }

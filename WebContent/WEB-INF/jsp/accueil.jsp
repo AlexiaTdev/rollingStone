@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>RollingStone - Service de location de voiture</title>
-<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href='css/bootstrap.min.css' />
 </head>
 <body>
 
