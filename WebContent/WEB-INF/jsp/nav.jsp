@@ -1,20 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-</head>
-<body>
-<ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link" href="<c:url value="/accueil.jsp" />">Retourner à l'Accueil</a>
-    <a class="nav-link" href="<c:url value="/gestionnaire.jsp" />">Acceder au gestionnaire</a>
-    <a class="nav-link" href="<c:url value="/mecanicien.jsp" />">Acceder a la maintenance</a>
-    <a class="nav-link" href="<c:url value="/responsable.jsp" />">Acceder a la vue responsable</a>
-    <a class="nav-link" href="#">se deconnecter</a>
-  </li>
- </ul>
-</body>
-</html>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <img src="https://freesvg.org/img/polettix-stone-age-wheel-1.png" alt="stone age wheel" width="40" height="40">
+ <a class="navbar-brand" href="#">RollingStone</a>
+ 
+  <div class=" navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="<c:url value='/Accueil' />">Accueil</a>
+      </li>
+      <c:if test="${isGestionnaire}" var="stockResult" scope="request">
+      	<li class="nav-item">
+        	<a class="nav-link" href="<c:url value='/Gestionnaire' />">Gestionnaire</a>
+      	</li>
+      </c:if>
+      <c:if test="${isMecanicien}" var="stockResult" scope="request">
+      	<li class="nav-item">
+        	<a class="nav-link" href="<c:url value='/Mecanicien' />">Maintenance</a>
+      	</li>
+      </c:if>
+      <c:if test="${isResponsable}" var="stockResult" scope="request">
+      	<li class="nav-item">
+        	<a class="nav-link" href="<c:url value='/Responsable' />">Responsable</a>
+      	</li>
+      </c:if>
+      <c:if test="${isConnected}" var="stockResult" scope="request">
+      	<li class="nav-item">
+        	<a class="nav-link" href="#">Sedeconnecter</a>
+      	</li>
+      </c:if>
+    </ul>
+  </div>
+</nav>
