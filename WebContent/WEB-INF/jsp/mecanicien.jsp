@@ -36,7 +36,7 @@
 					<tr>
 						<td>
 							<div class="form-check form-switch">
-  								<input class="form-check-input" type="checkbox" name="flexSwitchCheckDefault" id="flexSwitchCheckDefault[]" />
+  								<input class="form-check-input" type="checkbox" name="choix" id="choix[]" value="${voiture.plaque}"/>
 							</div>
 						</td>
 						<td><input type="text" name="plaque[]" value="${voiture.plaque}" disabled/></td>
@@ -71,10 +71,9 @@
 					</tr>
 					</c:if>
 				</c:forEach>
-
-				<input type="submit" value="Valider"/>
 			</tbody>
 		</table>
+		<input type="submit" value="Valider"/>
 	</form>
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
