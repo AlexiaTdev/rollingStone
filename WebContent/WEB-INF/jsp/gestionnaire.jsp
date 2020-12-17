@@ -33,7 +33,7 @@
   		<tbody>
 			<c:forEach items="${Voitures}" var="voiture">
 				<tr>
-					<td><input type="radio" name="choix" id="${voiture.plaque}"></td>
+					<td><input type="radio" name="choix" id="choix[]" value="${voiture.plaque}"></td>
 					<td><input type="text" name="plaque[]" value="${voiture.plaque}"/></td>
 					<td><input type="text" name="marque[]" value="${voiture.marque}"/></td>
 					<td><input type="text" name="model[]" value="${voiture.model}"/></td>
@@ -73,6 +73,7 @@
 	<button type="submit" method="post" action="/Gestionnaire" value="restituer">restituer voiture</button>
 	<button type="submit" method="post" action="/Gestionnaire" value="checkup">demander checkUp</button>
 </form>
+	<p><c:out value="${s}" ></c:out></p>
 
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
