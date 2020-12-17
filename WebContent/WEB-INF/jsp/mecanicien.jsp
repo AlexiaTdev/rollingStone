@@ -13,7 +13,7 @@
 <%@include file="nav.jsp" %>
 	Bienvenue sur la page du mecanicien !
 <div>
-	<form>
+	<form method="POST" action="Mecanicien">
 		<table class="table">
 			<thead class="thead-dark">
 	    		<tr>
@@ -32,10 +32,11 @@
 	  		</thead>
 	  		<tbody>
 				<c:forEach items="${Voitures}" var="voiture">
+				<c:if test="${voiture.etat == -1}">
 					<tr>
 						<td>
 							<div class="form-check form-switch">
-  								<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
+  								<input class="form-check-input" type="checkbox" name="flexSwitchCheckDefault" id="flexSwitchCheckDefault[]" />
 							</div>
 						</td>
 						<td><input type="text" name="plaque[]" value="${voiture.plaque}" disabled/></td>
@@ -68,7 +69,10 @@
 						</c:choose>
 						<td><input type="text" name="caution[]" value="${voiture.caution}" disabled/></td>
 					</tr>
+					</c:if>
 				</c:forEach>
+
+				<input type="submit" value="Valider"/>
 			</tbody>
 		</table>
 	</form>
