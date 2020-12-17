@@ -12,7 +12,7 @@
 <body>
 <%@include file="nav.jsp" %>
 	Bienvenue sur la page du mecanicien !
-<div>
+<div class="row">
 	<form method="POST" action="Mecanicien">
 		<table class="table">
 			<thead class="thead-dark">
@@ -26,7 +26,6 @@
 	      			<th scope="col-1">puissanceChevaux</th>
 	      			<th scope="col-1">Type Carburant</th>
 	      			<th scope="col-1">PrixJour</th>
-	      			<th scope="col-1">Etat</th>
 	      			<th scope="col-1">Caution</th>
 	    		</tr>
 	  		</thead>
@@ -47,26 +46,6 @@
 						<td><input type="text" name="puissanceChevaux[]" value="${voiture.puissanceChevaux}" disabled/></td>
 						<td><input type="text" name="energie[]" value="${voiture.energie}" disabled/></td>
 						<td><input type="text" name="prixParJour[]" value="${voiture.prixParJour}" disabled/></td>
-						<c:choose>
-							<c:when test="${voiture.etat==0}">
-								<td>Disponible</td>
-							</c:when>
-							<c:when test="${voiture.etat==1}">
-								<td>En location</td>
-							</c:when>
-							<c:when test="${voiture.etat==-1}">
-								<td>A réparer</td>
-							</c:when>
-							<c:when test="${voiture.etat==-2}">
-								<td>En réparation</td>
-							</c:when>
-							<c:when test="${voiture.etat==2}">
-								<td>Réservée</td>
-							</c:when>
-							<c:otherwise>
-								<td>Non disponible</td>
-							</c:otherwise>
-						</c:choose>
 						<td><input type="text" name="caution[]" value="${voiture.caution}" disabled/></td>
 					</tr>
 					</c:if>
