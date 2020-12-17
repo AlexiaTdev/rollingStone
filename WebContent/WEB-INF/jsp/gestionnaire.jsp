@@ -13,7 +13,7 @@
 
 	<h1>Bienvenue sur la page du gestionnaire !</h1>
 	
-<form>
+<form method="POST" action="Gestionnaire">
 	<table class="table">
 		<thead class="thead-dark">
     		<tr>
@@ -34,14 +34,14 @@
 			<c:forEach items="${Voitures}" var="voiture">
 				<tr>
 					<td><input type="radio" name="choix" id="choix[]" value="${voiture.plaque}"></td>
-					<td><input type="text" name="plaque[]" value="${voiture.plaque}"/></td>
-					<td><input type="text" name="marque[]" value="${voiture.marque}"/></td>
-					<td><input type="text" name="model[]" value="${voiture.model}"/></td>
-					<td><input type="text" name="couleur[]" value="${voiture.couleur}"/></td>
-					<td><input type="text" name="nbPlaces[]" value="${voiture.nbPlaces}"/></td>
-					<td><input type="text" name="puissanceChevaux[]" value="${voiture.puissanceChevaux}"/></td>
-					<td><input type="text" name="energie[]" value="${voiture.energie}"/></td>
-					<td><input type="text" name="prixParJour[]" value="${voiture.prixParJour}"/></td>
+					<td><input type="text" name="plaque[]" value="${voiture.plaque}" disabled/></td>
+					<td><input type="text" name="marque[]" value="${voiture.marque}" disabled/></td>
+					<td><input type="text" name="model[]" value="${voiture.model}" disabled/></td>
+					<td><input type="text" name="couleur[]" value="${voiture.couleur}" disabled/></td>
+					<td><input type="text" name="nbPlaces[]" value="${voiture.nbPlaces}" disabled/></td>
+					<td><input type="text" name="puissanceChevaux[]" value="${voiture.puissanceChevaux}" disabled/></td>
+					<td><input type="text" name="energie[]" value="${voiture.energie}" disabled/></td>
+					<td><input type="text" name="prixParJour[]" value="${voiture.prixParJour}" disabled/></td>
 					<c:choose>
 						<c:when test="${voiture.etat==0}">
 							<td>Disponible</td>
@@ -62,19 +62,26 @@
 							<td>Non disponible</td>
 						</c:otherwise>
 					</c:choose>
-						<input type="hidden" name="etat[]" value="${voiture.etat}"/>
-					<td><input type="text" name="caution[]" value="${voiture.caution}"/></td>
+						<input type="hidden" name="etat[]" value="${voiture.etat}" disabled/>
+					<td><input type="text" name="caution[]" value="${voiture.caution}" disabled/></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 
-	<button type="submit" method="post" action="/Gestionnaire" value="louer">Louer voiture</button>
-	<button type="submit" method="post" action="/Gestionnaire" value="restituer">restituer voiture</button>
-	<button type="submit" method="post" action="/Gestionnaire" value="checkup">demander checkUp</button>
+	<label>Louer</label>
+	<input type="radio" name="operation" id="operation[]" value="louer">
+	<br>
+	<label>Restituer</label>
+	<input type="radio" name="operation" id="operation[]" value="restituer">
+	<br>
+	<label>Checkup</label>
+	<input type="radio" name="operation" id="operation[]" value="checkup">
+	<br>
+	<label>Réserver</label>
+	<input type="radio" name="operation" id="operation[]" value="reserver">
+	<input type="submit" value="Valider"/>
 </form>
-	<p><c:out value="${s}" ></c:out></p>
-
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 </body>
