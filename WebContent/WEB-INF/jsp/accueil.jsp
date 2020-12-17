@@ -13,6 +13,9 @@
 <img src="/ressources/stoneAgeWheel.svg" alt="stone age wheel" width="500" height="600">
 <h1>Bienvenue sur Rolling Stone !</h1>
 </div>
+<%@include file="nav.jsp" %>
+
+
 <div class="container">
 <form method="post" action="j_security_check">
   <label for="j_username">Username:</label>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,17 +8,25 @@
 <title>Gestionnaire</title>
 </head>
 <body>
+<%@include file="nav.jsp" %>
 
-	<ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link" href="#">Retourner à l'Accueil</a>
-  </li>
-</ul>
 	<h1>Bienvenue sur la page du gestionnaire !</h1>
+	
 	<ul class="list-group">
-  		<li class="list-group-item">First item</li>
-  		<li class="list-group-item">Second item</li>
-  		<li class="list-group-item">Third item</li>
+		<c:forEach items="${Voitures}" var="voiture">
+			<tr>
+				<td><c:out value="${voiture.plaque}"/></td>
+				<td><c:out value="${voiture.marque}"/></td>
+				<td><c:out value="${voiture.model}"/></td>
+				<td><c:out value="${voiture.couleur}"/></td>
+				<td><c:out value="${voiture.nbPlaces}"/></td>
+				<td><c:out value="${voiture.puissanceChevaux}"/></td>
+				<td><c:out value="${voiture.energie}"/></td>
+				<td><c:out value="${voiture.prixParJour}"/></td>
+				<td><c:out value="${voiture.etat}"/></td>
+				<td><c:out value="${voiture.caution}"/></td>
+			</tr>
+		</c:forEach>
 	</ul>
 	<button id="louer">Louer voiture</button>
 	<button id="restituer">restituer voiture</button>

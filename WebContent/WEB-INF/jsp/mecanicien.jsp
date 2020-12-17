@@ -8,5 +8,7 @@
 </head>
 <body>
 	Bienvenue sur la page du mecanicien !
+	
+	<%@include file="nav.jsp" %>
 </body>
 </html>
