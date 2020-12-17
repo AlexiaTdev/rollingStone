@@ -16,10 +16,18 @@ import fr.epsi.rollingstone.beans.Voiture;
 public class Accueil extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getSession().setAttribute("isGestionnaire", request.isUserInRole("gestionnaire"));
+		request.getSession().setAttribute("isMecanicien", request.isUserInRole("mecanicien"));
+		request.getSession().setAttribute("isResponsable", request.isUserInRole("responsable"));
+		request.getSession().setAttribute("isConnected", !(request.getRemoteUser() != null && "".equals(request.getRemoteUser())));
 		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/accueil.jsp").forward(request, response);
 	}
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getSession().setAttribute("isGestionnaire", request.isUserInRole("gestionnaire"));
+		request.getSession().setAttribute("isMecanicien", request.isUserInRole("mecanicien"));
+		request.getSession().setAttribute("isResponsable", request.isUserInRole("responsable"));
+		request.getSession().setAttribute("isConnected", true);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/accueil.jsp").forward(request, response);
 	}
 }
