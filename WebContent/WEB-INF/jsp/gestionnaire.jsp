@@ -19,11 +19,11 @@
     		<tr>
     			<th scope="col"></th>
       			<th scope="col">Plaque</th>
-      			<th scope="col">essai</th>
-      			<th scope="col">Last</th>
-      			<th scope="col">Handle</th>
-      			<th scope="col">#</th>
-      			<th scope="col">First</th>
+      			<th scope="col">Marque</th>
+      			<th scope="col">model</th>
+      			<th scope="col">couleur</th>
+      			<th scope="col">nbPlaces</th>
+      			<th scope="col">puissanceChevaux</th>
       			<th scope="col">Type Carburant</th>
       			<th scope="col">PrixJour</th>
       			<th scope="col">Etat</th>
