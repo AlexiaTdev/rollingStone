@@ -34,14 +34,14 @@
 			<c:forEach items="${Voitures}" var="voiture">
 				<tr>
 					<td><input type="radio" name="choix" id="${voiture.plaque}"></td>
-					<td><c:out value="${voiture.plaque}"/></td>
-					<td><c:out value="${voiture.marque}"/></td>
-					<td><c:out value="${voiture.model}"/></td>
-					<td><c:out value="${voiture.couleur}"/></td>
-					<td><c:out value="${voiture.nbPlaces}"/></td>
-					<td><c:out value="${voiture.puissanceChevaux}"/></td>
-					<td><c:out value="${voiture.energie}"/></td>
-					<td><c:out value="${voiture.prixParJour}"/></td>
+					<td><input type="text" name="plaque[]" value="${voiture.plaque}"/></td>
+					<td><input type="text" name="marque[]" value="${voiture.marque}"/></td>
+					<td><input type="text" name="model[]" value="${voiture.model}"/></td>
+					<td><input type="text" name="couleur[]" value="${voiture.couleur}"/></td>
+					<td><input type="text" name="nbPlaces[]" value="${voiture.nbPlaces}"/></td>
+					<td><input type="text" name="puissanceChevaux[]" value="${voiture.puissanceChevaux}"/></td>
+					<td><input type="text" name="energie[]" value="${voiture.energie}"/></td>
+					<td><input type="text" name="prixParJour[]" value="${voiture.prixParJour}"/></td>
 					<c:choose>
 						<c:when test="${voiture.etat==0}">
 							<td>Disponible</td>
@@ -62,7 +62,8 @@
 							<td>Non disponible</td>
 						</c:otherwise>
 					</c:choose>
-					<td><c:out value="${voiture.caution}"/></td>
+						<input type="hidden" name="etat[]" value="${voiture.etat}"/>
+					<td><input type="text" name="caution[]" value="${voiture.caution}"/></td>
 				</tr>
 			</c:forEach>
 		</tbody>
