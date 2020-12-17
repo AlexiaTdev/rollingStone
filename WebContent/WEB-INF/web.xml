@@ -50,11 +50,11 @@
            </auth-constraint>
        </security-constraint>
        <login-config>
-           <auth-method>FORM</auth-method>
-           <form-login-config>
-               <form-login-page>/accueil.jsp</form-login-page>
-               <form-error-page>/error.jsp</form-error-page>
-           </form-login-config>
+           <auth-method>BASIC</auth-method>
+           <!--  <form-login-config>
+               <form-login-page>/Login</form-login-page>
+               <form-error-page>/Accueil</form-error-page>
+           </form-login-config>-->
        </login-config>
        <security-role>
            <role-name>responsable</role-name>
