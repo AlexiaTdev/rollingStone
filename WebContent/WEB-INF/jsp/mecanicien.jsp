@@ -11,7 +11,7 @@
 </head>
 <body>
 <%@include file="nav.jsp" %>
-	Bienvenue sur la page du mecanicien !
+<h1>Bienvenue sur la page du mecanicien !</h1>
 <div class="row">
 	<form method="POST" action="Mecanicien">
 		<table class="table">

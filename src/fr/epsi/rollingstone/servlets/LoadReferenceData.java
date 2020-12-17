@@ -10,9 +10,9 @@ import fr.epsi.rollingstone.beans.Voiture;
 
 @WebListener
 public class LoadReferenceData implements ServletContextListener {
-  @Override
-  public void contextInitialized(ServletContextEvent sce) {
-	  Voiture renault5 = new Voiture();
+	@Override
+	public void contextInitialized(ServletContextEvent sce) {
+		Voiture renault5 = new Voiture();
 		renault5.setCouleur("rouge");
 		renault5.setEnergie("diesel");
 		renault5.setPrixParJour(12.4);
@@ -22,6 +22,7 @@ public class LoadReferenceData implements ServletContextListener {
 		renault5.setNbPlaces(4);
 		renault5.setPlaque("123 AB 34");
 		renault5.setPuissanceChevaux(20);
+		renault5.setEtat(-1);
 		Voiture peugeot206 = new Voiture();
 		peugeot206.setCouleur("bleu");
 		peugeot206.setEnergie("escence");
@@ -62,12 +63,24 @@ public class LoadReferenceData implements ServletContextListener {
 		teslaX.setNbPlaces(7);
 		teslaX.setPlaque("655 21 AT");
 		teslaX.setPuissanceChevaux(170);
+		Voiture ferrarirouge = new Voiture();
+		ferrarirouge.setCouleur("rouge");
+		ferrarirouge.setEnergie("escence");
+		ferrarirouge.setPrixParJour(49);
+		ferrarirouge.setCaution(900);
+		ferrarirouge.setMarque("Ferrari");
+		ferrarirouge.setModel("fer");
+		ferrarirouge.setNbPlaces(2);
+		ferrarirouge.setEtat(-1);
+		ferrarirouge.setPlaque("DDD 99 AA");
+		ferrarirouge.setPuissanceChevaux(200);
 		ArrayList<Voiture> listeVoiture = new ArrayList<>();
 		listeVoiture.add(renault5);
 		listeVoiture.add(peugeot206);
 		listeVoiture.add(fordfocus);
 		listeVoiture.add(bmwz3);
 		listeVoiture.add(teslaX);
+		listeVoiture.add(ferrarirouge);
 		sce.getServletContext().setAttribute("Voitures", listeVoiture);
-  }
+	}
 }
